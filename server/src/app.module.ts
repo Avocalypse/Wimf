@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { MessagesModule } from './messages/messages.module';
-import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -14,7 +13,6 @@ import { PrismaModule } from './prisma/prisma.module';
       typePaths: ['./**/*.graphql'],
     }),
     MessagesModule,
-    PrismaModule,
   ],
 })
 

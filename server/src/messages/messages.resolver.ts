@@ -1,13 +1,17 @@
 import { Resolver, Query, Mutation, Args } from '@nestjs/graphql';
-import { PrismaClient } from '@prisma/client'
 
 @Resolver()
 export class MessagesResolver {
-  constructor(private readonly prisma: PrismaClient) {}
+  // this is just for demonstration purposes
+  // do NOT do this in real-life
+  // this is meant as a substitute for a database
+  messagesThatReallyShouldBeInADb = [
+    { id: 0, description: 'The seed message' },
+  ];
 
   @Query()
   messages() {
-    return this.prisma.query.messages(args);
+    return this.messagesThatReallyShouldBeInADb;
   }
 
   @Mutation()
